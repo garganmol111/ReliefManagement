@@ -1,6 +1,4 @@
 pragma solidity 0.5.4;
-import 'https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol';
-
 
 contract Crowdfunding {
     using SafeMath for uint256;
@@ -34,4 +32,10 @@ contract Crowdfunding {
             amountToRaise
         );
     }                                                                                                                                   
+
+    function returnAllProjects() external view returns(Project[] memory){
+        return projects;
+    }
 }
+
+
