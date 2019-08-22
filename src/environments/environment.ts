@@ -3,12 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-
   production: false,
-	firebaseConfig: {
+  firebaseConfig: {
 		apiKey: 'AIzaSyAEOwKnM9tqAIZT7rGO2zBomXifTHBYziE',
 		authDomain: 'teksystem-hackathon.firebaseapp.com',
 		databaseURL: 'https://teksystem-hackathon.firebaseio.com',
+
 		projectId: 'teksystem-hackathon',
 		storageBucket: '',
 		messagingSenderId: '1030562055942',

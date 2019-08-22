@@ -5,11 +5,26 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
 
+
+
+export class MapComponent implements OnInit {
+  v:string = 'Map';
+  
   constructor() { }
 
   ngOnInit() {
   }
 
+  change(va:string){
+    if(va == 'Map'){
+      this.v = 'Map'
+    }
+    else if(va == 'Sum'){
+      this.v = 'Sum'
+    }
+    if(va == 'Send'){
+      this.v = 'Send'
+    }
+  }
 }

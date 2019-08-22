@@ -3,3 +3,10 @@
     position:relative;
     left:300px;
 }
+
+.add-button{
+    float: right;
+    background: #000000;
+    color: white;
+	margin-right: 2em;
+}
