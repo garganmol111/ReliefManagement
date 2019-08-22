@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { FirebaseAuth } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Toast, ToastrService } from 'ngx-toastr';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
 	selector: 'app-general-request',
@@ -24,6 +25,7 @@ export class GeneralRequestComponent implements OnInit {
 		'quantity': number;
 	}[] = [];
 
+	datasource;
 	displayedColumns: string[] = [ 'item', 'quantity', 'delete' ];
 	authUID: string;
 
@@ -53,11 +55,12 @@ export class GeneralRequestComponent implements OnInit {
 			this.itemsToRequest = [ ...this.itemsToRequest, tempObject ];
 		}
 
-		console.log(this.itemsToRequest);
+		this.datasource = new MatTableDataSource(this.itemsToRequest);
 	}
 
 	delete(index) {
 		this.itemsToRequest.splice(index, 1);
+		this.datasource = new MatTableDataSource(this.itemsToRequest);
 	}
 
 	submitRequest() {
