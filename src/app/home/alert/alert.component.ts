@@ -5,6 +5,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { CaterComponent } from '../ui-element/cater/cater.component';
 
+
 @Component({
 	selector: 'app-alert',
 	templateUrl: './alert.component.html',
@@ -50,7 +51,9 @@ export class AlertComponent implements OnInit {
 			this._router.navigate([ '/login' ]);
 		});
 	}
-
+	view(index){
+	
+	}
 	cater(index) {
 		this._bottomSheet.open(CaterComponent, { data: this.alerts[index] });
 	}
