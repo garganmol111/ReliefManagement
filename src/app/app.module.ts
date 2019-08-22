@@ -19,12 +19,23 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SummaryComponent } from './disaster/summary/summary.component';
 
+// const firebaseConfig = {
+//   apiKey: 'AIzaSyAEOwKnM9tqAIZT7rGO2zBomXifTHBYziE',
+//   authDomain: 'teksystem-hackathon.firebaseapp.com',
+//   databaseURL: 'https://teksystem-hackathon.firebaseio.com',
+//   projectId: 'teksystem-hackathon',
+//   storageBucket: '',
+//   messagingSenderId: '1030562055942',
+//   appId: '1:1030562055942:web:dbb73b1c20d3453b'
+// };
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SummaryComponent
+
   ],
   imports: [
     BrowserModule,

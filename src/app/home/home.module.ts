@@ -18,6 +18,7 @@ import { InventoryComponent } from './core/inventory/inventory.component';
 import { TrackProcessComponent } from './core/track-process/track-process.component';
 import { GeneralRequestComponent } from './core/general-request/general-request.component';
 import { MainComponent } from './core/main/main.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { MainComponent } from './core/main/main.component';
     MatButtonModule,
     AngularFireModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }
