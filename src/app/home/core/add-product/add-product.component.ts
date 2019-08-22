@@ -14,6 +14,7 @@ export class AddProductComponent implements OnInit {
   };
 
   formMaterial: MaterialForm = { ...this.defaultMaterials};
+
   constructor() { }
 
   ngOnInit() {

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: ['', [Validators.minLength(5), Validators.required]]
     })
     let options = {
-      strings: ["Innovate.", "Create.", "Dictate.", "Code."],
+      strings: ["Donate.", "Help.", "Make things better."],
       typeSpeed: 100,
       backSpeed: 100,
       showCursor: true,

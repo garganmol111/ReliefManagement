@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SummaryComponent } from './disaster/summary/summary.component';
 
 // const firebaseConfig = {
 //   apiKey: 'AIzaSyAEOwKnM9tqAIZT7rGO2zBomXifTHBYziE',
@@ -29,11 +30,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 // };
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SummaryComponent
+
   ],
   imports: [
     BrowserModule,
