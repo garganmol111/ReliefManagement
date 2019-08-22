@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
-
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,20 +19,37 @@ import { GeneralRequestComponent } from './core/general-request/general-request.
 import { MainComponent } from './core/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { ChartsModule } from 'ng2-charts';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  declarations: [HomeComponent, AlertComponent, AddProductComponent, MapComponent, InventoryComponent, TrackProcessComponent, GeneralRequestComponent, MainComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule,
-    AngularFireModule,
-    AngularFireAuthModule,
-    AngularFireDatabaseModule,
-    FormsModule,
-    ReactiveFormsModule
-  ]
+	declarations: [
+		HomeComponent,
+		AlertComponent,
+		AddProductComponent,
+		MapComponent,
+		InventoryComponent,
+		TrackProcessComponent,
+		GeneralRequestComponent,
+		MainComponent
+	],
+	imports: [
+		CommonModule,
+		HomeRoutingModule,
+		MatToolbarModule,
+		MatCardModule,
+		MatButtonModule,
+		AngularFireModule,
+		AngularFireAuthModule,
+		AngularFireDatabaseModule,
+		FormsModule,
+		ReactiveFormsModule,
+		MatInputModule,
+		MatTableModule,
+		ChartsModule,
+		MatSelectModule
+	]
 })
-export class HomeModule { }
+export class HomeModule {}
