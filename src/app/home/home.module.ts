@@ -19,10 +19,11 @@ import { TrackProcessComponent } from './core/track-process/track-process.compon
 import { GeneralRequestComponent } from './core/general-request/general-request.component';
 import { MainComponent } from './core/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MapboxComponent } from './core/map/mapbox/mapbox.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, AlertComponent, AddProductComponent, MapComponent, InventoryComponent, TrackProcessComponent, GeneralRequestComponent, MainComponent],
+  declarations: [HomeComponent, AlertComponent, AddProductComponent, MapComponent, InventoryComponent, TrackProcessComponent, GeneralRequestComponent, MainComponent, MapboxComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

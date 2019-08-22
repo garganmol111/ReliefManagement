@@ -9,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 
@@ -28,7 +27,6 @@ import { SummaryComponent } from './disaster/summary/summary.component';
 //   messagingSenderId: '1030562055942',
 //   appId: '1:1030562055942:web:dbb73b1c20d3453b'
 // };
-
 
 @NgModule({
   declarations: [
