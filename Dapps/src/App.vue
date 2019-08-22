@@ -1,5 +1,5 @@
 <template>
-  <v-app class="grey lighten-3">
+  <v-app class="white lighten-3">
     <v-content>
       <v-container>
         <v-layout
@@ -18,7 +18,8 @@
 
         <v-layout row justify-center>
           <v-dialog v-model="startProjectDialog" max-width="600px" persistent>
-            <v-btn slot="activator" color="primary" dark>Ask for Fund</v-btn>
+            <v-btn slot="activator" color="black" dark class="button-text-black">Ask for Fund</v-btn>
+
             <v-card>
               <v-card-title>
                 <span class="headline font-weight-bold mt-2 ml-4">Bring your life Again</span>
@@ -93,10 +94,13 @@
               width="800"
             >
               <v-card>
-                <v-card-title class="headline font-weight-bold">
-                  {{ project.projectTitle }}
+
+                <v-card-title class="headline font-weight-bold text-uppercase">
+                  <span class="proj-des-text text-uppercase">
+                    {{ project.projectTitle }}
+                  </span>
                 </v-card-title>
-                <v-card-text>
+                <v-card-text proj-des-text>
                   {{ project.projectDesc }}
                 </v-card-text>
                 <v-card-actions>
@@ -141,7 +145,7 @@
                   </div>
                 </v-card-title>
                 <v-flex
-                  v-if="project.currentState == 0 && account != project.projectStarter"
+
                   class="d-flex ml-3" xs12 sm6 md3>
                   <v-text-field
                     label="Amount (in ETH)"
@@ -152,7 +156,7 @@
                   ></v-text-field>
                   <v-btn
                     class="mt-3"
-                    color="light-blue darken-1 white--text"
+                    color="black darken-1 white--text"
                     @click="fundProject(index)"
                     :loading="project.isLoading"
                   >
@@ -193,7 +197,6 @@
 </template>
 
 <script>
-// We import our the scripts for the smart contract instantiation, and web3
 import crowdfundInstance from '../contracts/crowdfundInstance';
 import crowdfundProject from '../contracts/crowdfundProjectInstance';
 import web3 from '../contracts/web3';
@@ -205,9 +208,9 @@ export default {
       startProjectDialog: false,
       account: null,
       stateMap: [
-        { color: 'primary', text: 'Ongoing' },
+        { color: 'success', text: 'Ongoing' },
         { color: 'warning', text: 'Expired' },
-        { color: 'success', text: 'Completed' },
+        { color: 'primary', text: 'Completed' },
       ],
       projectData: [],
       newProject: { isLoading: false },
@@ -222,43 +225,41 @@ export default {
   methods: {
     getProjects() {
       crowdfundInstance.methods.returnAllProjects().call().then((projects) => {
-    projects.forEach((projectAddress) => {
-      const projectInst = crowdfundProject(projectAddress);
-      projectInst.methods.getDetails().call().then((projectData) => {
-        const projectInfo = projectData;
-        projectInfo.isLoading = false;
-        projectInfo.contract = projectInst;
-        this.projectData.push(projectInfo);
+        projects.forEach((projectAddress) => {
+          const projectInst = crowdfundProject(projectAddress);
+          projectInst.methods.getDetails().call().then((projectData) => {
+            const projectInfo = projectData;
+            projectInfo.isLoading = false;
+            projectInfo.contract = projectInst;
+            this.projectData.push(projectInfo);
+          });
+        });
       });
-    });
-  });
     },
     startProject() {
       this.newProject.isLoading = true;
-  crowdfundInstance.methods.startProject(
-    this.newProject.title,
-    this.newProject.description,
-    this.newProject.duration,
-    web3.utils.toWei(this.newProject.amountGoal, 'ether'),
-  ).send({
-    from: this.account,
-  }).then((res) => {
-    const projectInfo = res.events.ProjectStarted.returnValues;
-    projectInfo.isLoading = false;
-    projectInfo.currentAmount = 0;
-    projectInfo.currentState = 0;
-    projectInfo.contract = crowdfundProject(projectInfo.contractAddress);
-    this.startProjectDialog = false;
-    this.newProject = { isLoading: false };
-  });
-
+      crowdfundInstance.methods.startProject(
+        this.newProject.title,
+        this.newProject.description,
+        this.newProject.duration,
+        web3.utils.toWei(this.newProject.amountGoal, 'ether'),
+      ).send({
+        from: this.account,
+      }).then((res) => {
+        const projectInfo = res.events.ProjectStarted.returnValues;
+        projectInfo.isLoading = false;
+        projectInfo.currentAmount = 0;
+        projectInfo.currentState = 0;
+        projectInfo.contract = crowdfundProject(projectInfo.contractAddress);
+        this.startProjectDialog = false;
+        this.newProject = { isLoading: false };
+      });
     },
-    
-
     fundProject(index) {
       if (!this.projectData[index].fundAmount) {
         return;
       }
+
       const projectContract = this.projectData[index].contract;
       this.projectData[index].isLoading = true;
       projectContract.methods.contribute().send({
@@ -269,7 +270,7 @@ export default {
         const projectGoal = parseInt(this.projectData[index].goalAmount, 10);
         this.projectData[index].currentAmount = newTotal;
         this.projectData[index].isLoading = false;
-        // Set project state to success
+
         if (newTotal >= projectGoal) {
           this.projectData[index].currentState = 2;
         }
@@ -286,3 +287,14 @@ export default {
   },
 };
 </script>
+
+
+<style media="screen">
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+  body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-color: #fff;
+  }
+</style>
