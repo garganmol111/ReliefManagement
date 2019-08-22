@@ -26,7 +26,8 @@ import { ChartsModule } from 'ng2-charts';
 import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-	declarations: [
+
+  declarations: [
 		HomeComponent,
 		AlertComponent,
 		AddProductComponent,
