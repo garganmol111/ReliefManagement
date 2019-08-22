@@ -6,6 +6,7 @@ declare var L: any;
 	templateUrl: './map.component.html',
 	styleUrls: [ './map.component.css' ]
 })
+<<<<<<< HEAD
 export class MapComponent implements OnInit {
 	constructor() {}
 
@@ -41,4 +42,28 @@ export class MapComponent implements OnInit {
 			.addTo(map);
 		L.circle([ 13.0827, 80.2707 ], { radius: 100000 }).addTo(map);
 	}
+=======
+
+
+
+export class MapComponent implements OnInit {
+  v:string = 'Map';
+  
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  change(va:string){
+    if(va == 'Map'){
+      this.v = 'Map'
+    }
+    else if(va == 'Sum'){
+      this.v = 'Sum'
+    }
+    if(va == 'Send'){
+      this.v = 'Send'
+    }
+  }
+>>>>>>> master
 }
