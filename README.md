@@ -9,7 +9,7 @@ Our project submission for dell hackathon
 
 # Branch Descriptions
 *  **Master** : Final Branch with all the final changes
-*  **<name>** : Individual Branches
+*  **< name >** : Individual Branches
 
 # Team Members
 [Ayush Mahajan]() [Anmol Garg]() [Shashvat Mohane]() [Naman Pareek]() [Abhinav Bharadwaj]()
