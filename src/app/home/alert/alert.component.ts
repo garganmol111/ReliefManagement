@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { CaterComponent } from '../ui-element/cater/cater.component';
 
 @Component({
 	selector: 'app-alert',
@@ -9,11 +11,26 @@ import { Router } from '@angular/router';
 	styleUrls: [ './alert.component.css' ]
 })
 export class AlertComponent implements OnInit {
-	constructor(private afAuth: AngularFireAuth, private _db: AngularFireDatabase, private _router: Router) {}
+	constructor(
+		private afAuth: AngularFireAuth,
+		private _db: AngularFireDatabase,
+		private _router: Router,
+		private _bottomSheet: MatBottomSheet
+	) {}
 	alerts: { 'id': string; 'location': string }[] = [];
 	$userType;
+	shouldShow: boolean = false;
+	isNgo: boolean;
 	ngOnInit() {
+		this._router.events.subscribe((res) => {
+			if (res instanceof NavigationEnd) {
+				if (res.url == '/track') this.shouldShow = true;
+			}
+		});
 		this.$userType = this._db.object(`users/${this.afAuth.auth.currentUser.uid}`).valueChanges();
+		this.$userType.subscribe((res) => {
+			this.isNgo = res == 'ngo';
+		});
 		this._db.object('alert').valueChanges().subscribe((res) => {
 			var lat = this._db.list('POC').valueChanges().subscribe((res) => {
 				this.alerts = [];
@@ -32,5 +49,9 @@ export class AlertComponent implements OnInit {
 		this.afAuth.auth.signOut().then((res) => {
 			this._router.navigate([ '/login' ]);
 		});
+	}
+
+	cater(index) {
+		this._bottomSheet.open(CaterComponent, { data: this.alerts[index] });
 	}
 }
