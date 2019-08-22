@@ -19,17 +19,23 @@ import { GeneralRequestComponent } from './core/general-request/general-request.
 import { MainComponent } from './core/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapboxComponent } from './core/map/mapbox/mapbox.component';
-
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { ChartsModule } from 'ng2-charts';
 import { MatSelectModule } from '@angular/material/select';
+<<<<<<< HEAD
 <<<<<<< HEAD
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { CaterComponent } from './ui-element/cater/cater.component';
 =======
 import { SendComponent } from './core/map/send/send.component';
 >>>>>>> master
+=======
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { CaterComponent } from './ui-element/cater/cater.component';
+import { SendComponent } from './core/map/send/send.component';
+
+>>>>>>> 5cd912af03e395d599310fea5e9db10a4ddab6d6
 
 @NgModule({
 
@@ -43,11 +49,17 @@ import { SendComponent } from './core/map/send/send.component';
 		GeneralRequestComponent,
 		MainComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
 		CaterComponent
 =======
 		MapboxComponent,
 		SendComponent
 >>>>>>> master
+=======
+		CaterComponent
+		MapboxComponent,
+		SendComponent
+>>>>>>> 5cd912af03e395d599310fea5e9db10a4ddab6d6
 	],
 	imports: [
 		CommonModule,
