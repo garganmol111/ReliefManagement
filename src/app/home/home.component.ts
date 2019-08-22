@@ -16,10 +16,13 @@ export class HomeComponent implements OnInit {
 	users: any;
 	$userType;
 
-	constructor(private router: Router, private _db: AngularFireDatabase, private afAuth: AngularFireAuth) {
-		console.log(localStorage.getItem('userType'));
+	isNgo: boolean;
 
+	constructor(private router: Router, private _db: AngularFireDatabase, private afAuth: AngularFireAuth) {
 		this.$userType = this._db.object(`users/${this.afAuth.auth.currentUser.uid}`).valueChanges();
+		this.$userType.subscribe((res) => {
+			this.isNgo = res == 'ngo';
+		});
 	}
 
 	ngOnInit() {}
