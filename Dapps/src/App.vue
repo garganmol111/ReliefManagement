@@ -193,7 +193,6 @@
 </template>
 
 <script>
-// We import our the scripts for the smart contract instantiation, and web3
 import crowdfundInstance from '../contracts/crowdfundInstance';
 import crowdfundProject from '../contracts/crowdfundProjectInstance';
 import web3 from '../contracts/web3';
@@ -222,43 +221,41 @@ export default {
   methods: {
     getProjects() {
       crowdfundInstance.methods.returnAllProjects().call().then((projects) => {
-    projects.forEach((projectAddress) => {
-      const projectInst = crowdfundProject(projectAddress);
-      projectInst.methods.getDetails().call().then((projectData) => {
-        const projectInfo = projectData;
-        projectInfo.isLoading = false;
-        projectInfo.contract = projectInst;
-        this.projectData.push(projectInfo);
+        projects.forEach((projectAddress) => {
+          const projectInst = crowdfundProject(projectAddress);
+          projectInst.methods.getDetails().call().then((projectData) => {
+            const projectInfo = projectData;
+            projectInfo.isLoading = false;
+            projectInfo.contract = projectInst;
+            this.projectData.push(projectInfo);
+          });
+        });
       });
-    });
-  });
     },
     startProject() {
       this.newProject.isLoading = true;
-  crowdfundInstance.methods.startProject(
-    this.newProject.title,
-    this.newProject.description,
-    this.newProject.duration,
-    web3.utils.toWei(this.newProject.amountGoal, 'ether'),
-  ).send({
-    from: this.account,
-  }).then((res) => {
-    const projectInfo = res.events.ProjectStarted.returnValues;
-    projectInfo.isLoading = false;
-    projectInfo.currentAmount = 0;
-    projectInfo.currentState = 0;
-    projectInfo.contract = crowdfundProject(projectInfo.contractAddress);
-    this.startProjectDialog = false;
-    this.newProject = { isLoading: false };
-  });
-
+      crowdfundInstance.methods.startProject(
+        this.newProject.title,
+        this.newProject.description,
+        this.newProject.duration,
+        web3.utils.toWei(this.newProject.amountGoal, 'ether'),
+      ).send({
+        from: this.account,
+      }).then((res) => {
+        const projectInfo = res.events.ProjectStarted.returnValues;
+        projectInfo.isLoading = false;
+        projectInfo.currentAmount = 0;
+        projectInfo.currentState = 0;
+        projectInfo.contract = crowdfundProject(projectInfo.contractAddress);
+        this.startProjectDialog = false;
+        this.newProject = { isLoading: false };
+      });
     },
-    
-
     fundProject(index) {
       if (!this.projectData[index].fundAmount) {
         return;
       }
+
       const projectContract = this.projectData[index].contract;
       this.projectData[index].isLoading = true;
       projectContract.methods.contribute().send({
@@ -269,7 +266,7 @@ export default {
         const projectGoal = parseInt(this.projectData[index].goalAmount, 10);
         this.projectData[index].currentAmount = newTotal;
         this.projectData[index].isLoading = false;
-        // Set project state to success
+
         if (newTotal >= projectGoal) {
           this.projectData[index].currentState = 2;
         }
