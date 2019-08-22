@@ -17,7 +17,6 @@ export class MapComponent implements OnInit {
   }
 
   change(va:string){
-    console.log("hello---")
     if(va == 'Map'){
       this.v = 'Map'
     }
