@@ -29,7 +29,7 @@ export class TrackProcessComponent implements OnInit {
 			}
 		}
 	};
-	public pieChartType: ChartType = 'pie';
+	public pieChartType: ChartType = 'doughnut';
 	public pieChartLegend = true;
 	public pieChartData: number[] = [ 300, 500, 100 ];
 	public pieChartLabels = [ 'Requested', 'Received', 'In-Transit' ];

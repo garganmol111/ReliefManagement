@@ -1,25 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="col" *ngFor="let alert of alerts" style="margin-top: 1em">
+        <div class="col-12" *ngFor="let alert of alerts" style="margin-top: 1em">
             <mat-card class="mat-elevation-z4">
                 <mat-card-content>
                     <div class="container">
-                        <div class="row ">
-                            <div class="col ">
-                                <table>
-                                    <tr>
-                                        <td></td>
-                                        <td><b style="font-weight: 700; "> <i class="material-icons">location_on</i> {{alert.location}}</b></td>
-                                    </tr>
-                                </table>
-
-                            </div>
-                        </div>
+                        <div class="row">
+                                    <div class="col"><b style="font-weight: 700"><i class="material-icons">location_on</i> {{alert.location}}</b></div>
+                                    <div class="col-3"><button mat-flat-button color="primary">Cater</button></div>
+                         </div>
                     </div>
                 </mat-card-content>
-                <mat-card-actions><button mat-button style="margin-right: -1em">Cater Request</button>
-                    <button mat-button style="color: #E63946" (click)="logout()">Logout</button>
-                </mat-card-actions>
             </mat-card>
         </div>
     </div>

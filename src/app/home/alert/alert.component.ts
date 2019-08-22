@@ -14,13 +14,13 @@ export class AlertComponent implements OnInit {
 
 	ngOnInit() {
 		this._db.object('alert').valueChanges().subscribe((res) => {
-			console.log(Object.keys(res));
-			Object.keys(res).forEach((element) => {
+			var lat = this._db.list('POC').valueChanges().subscribe((res) => {
 				this.alerts = [];
-				this._db.list('POC').valueChanges().subscribe((res) => {
-					res.forEach((ele) => {
-						this.alerts.push({ id: element, location: ele['location'] });
+				res.forEach((element) => {
+					Object.keys(element['alert']).forEach((ele) => {
+						this.alerts.push({ id: element['alert'][ele], location: element['location'] });
 					});
+					lat.unsubscribe();
 					console.log(this.alerts);
 				});
 			});
