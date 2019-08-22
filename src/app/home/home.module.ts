@@ -27,10 +27,8 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { CaterComponent } from './ui-element/cater/cater.component';
 import { SendComponent } from './core/map/send/send.component';
 
-
 @NgModule({
-
-  declarations: [
+	declarations: [
 		HomeComponent,
 		AlertComponent,
 		AddProductComponent,
@@ -39,7 +37,7 @@ import { SendComponent } from './core/map/send/send.component';
 		TrackProcessComponent,
 		GeneralRequestComponent,
 		MainComponent,
-		CaterComponent
+		CaterComponent,
 		MapboxComponent,
 		SendComponent
 	],
