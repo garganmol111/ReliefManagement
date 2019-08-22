@@ -1,7 +1,7 @@
 
 import web3 from './web3';
 
-const address = '0x0df0ba583a7e588db56520df188e1717e493bc1c'; 
+const address = '0x63a5c51764986365bd3e0b66af9e89fa7b9a62f7'; 
 
 const abi = [
 	{
@@ -266,7 +266,7 @@ const abi = [
 		"name": "CreatorPaid",
 		"type": "event"
 	}
-]; 
+];
 const instance = new web3.eth.Contract(abi, address);
 
 export default instance;
