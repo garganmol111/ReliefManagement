@@ -18,6 +18,7 @@ import { TrackProcessComponent } from './core/track-process/track-process.compon
 import { GeneralRequestComponent } from './core/general-request/general-request.component';
 import { MainComponent } from './core/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MapboxComponent } from './core/map/mapbox/mapbox.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
@@ -25,7 +26,8 @@ import { ChartsModule } from 'ng2-charts';
 import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-	declarations: [
+
+  declarations: [
 		HomeComponent,
 		AlertComponent,
 		AddProductComponent,
@@ -33,7 +35,8 @@ import { MatSelectModule } from '@angular/material/select';
 		InventoryComponent,
 		TrackProcessComponent,
 		GeneralRequestComponent,
-		MainComponent
+		MainComponent,
+    MapboxComponent
 	],
 	imports: [
 		CommonModule,
