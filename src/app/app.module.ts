@@ -19,6 +19,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SummaryComponent } from './disaster/summary/summary.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { HttpClientModule } from '@angular/common/http';
 // const firebaseConfig = {
 //   apiKey: 'AIzaSyAEOwKnM9tqAIZT7rGO2zBomXifTHBYziE',
 //   authDomain: 'teksystem-hackathon.firebaseapp.com',
@@ -45,7 +46,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 		ReactiveFormsModule,
 		MatSnackBarModule,
 		ToastrModule.forRoot(),
-		AngularFireDatabaseModule
+		AngularFireDatabaseModule,
+		HttpClientModule
 	],
 	providers: [],
 	bootstrap: [ AppComponent ]

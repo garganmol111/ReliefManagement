@@ -4,6 +4,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Router, NavigationEnd } from '@angular/router';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { CaterComponent } from '../ui-element/cater/cater.component';
+import { EmailService } from 'src/app/services/email.service';
+import { ViewTransitComponent } from '../ui-element/view-transit/view-transit.component';
 
 @Component({
 	selector: 'app-alert',
@@ -15,7 +17,8 @@ export class AlertComponent implements OnInit {
 		private afAuth: AngularFireAuth,
 		private _db: AngularFireDatabase,
 		private _router: Router,
-		private _bottomSheet: MatBottomSheet
+		private _bottomSheet: MatBottomSheet,
+		private mailer: EmailService
 	) {}
 	alerts: { 'id': string; 'location': string }[] = [];
 	$userType;
@@ -51,7 +54,17 @@ export class AlertComponent implements OnInit {
 		});
 	}
 
+	email(index) {
+		this.mailer.sendEmail(`this email was sent by ${index}`).subscribe((res) => {
+			console.log(res);
+		});
+	}
+
 	cater(index) {
 		this._bottomSheet.open(CaterComponent, { data: this.alerts[index] });
+	}
+
+	view(index) {
+		this._bottomSheet.open(ViewTransitComponent, { data: this.alerts[index] });
 	}
 }

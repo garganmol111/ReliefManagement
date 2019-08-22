@@ -12,15 +12,6 @@ export class MapboxService {
 		// mapboxgl[accessToken] = environment.mapbox.accesssToken;
 	}
 
-	// getMarkers(): any {
-	//   return this.db.list('/markers')
-	// }
-
-	// createMarker(data: GeoJson) {
-	//   return this.db.list('/markers')
-	//                 .push(data)
-	// }
-
 	removeMarker($key: string) {
 		return this.db.object('/markers/' + $key).remove();
 	}

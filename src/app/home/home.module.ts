@@ -26,6 +26,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { CaterComponent } from './ui-element/cater/cater.component';
 import { SendComponent } from './core/map/send/send.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ViewTransitComponent } from './ui-element/view-transit/view-transit.component';
 
 @NgModule({
 	declarations: [
@@ -39,7 +41,8 @@ import { SendComponent } from './core/map/send/send.component';
 		MainComponent,
 		CaterComponent,
 		MapboxComponent,
-		SendComponent
+		SendComponent,
+		ViewTransitComponent
 	],
 	imports: [
 		CommonModule,
@@ -56,8 +59,9 @@ import { SendComponent } from './core/map/send/send.component';
 		MatTableModule,
 		ChartsModule,
 		MatSelectModule,
-		MatBottomSheetModule
+		MatBottomSheetModule,
+		HttpClientModule
 	],
-	entryComponents: [ CaterComponent ]
+	entryComponents: [ CaterComponent, ViewTransitComponent ]
 })
 export class HomeModule {}
