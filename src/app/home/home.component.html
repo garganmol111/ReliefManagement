@@ -1,0 +1,37 @@
+<div class="container" style="min-height: 2.5em"></div>
+<mat-toolbar>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <ul *ngIf="$userType| async">
+                    <li (click)="changeTab('ADD_PRODUCT')" *ngIf="($userType| async)=='ngo'">Add Product</li>
+                    <li style="margin-left: 2em" (click)="changeTab('SHOW_MAP')" *ngIf="($userType| async)=='ngo'">Map</li>
+                    <li style="margin-left: 2em" (click)="changeTab('ADD_ITEMS')" *ngIf="($userType| async)=='ngo'">Inventory</li>
+                    <li style="margin-left: 2em" (click)="changeTab('ORDER')"*ngIf="($userType| async)!='ngo'">Track Process</li>
+                    <li style="margin-left: 2em" (click)="changeTab('ACTIVE_ORDER')"*ngIf="($userType| async)!='ngo'">General Request</li>
+                    <li style="margin-left: 2em; color: #E63946" (click)="logout()">Logout</li>
+                </ul>
+            </div>
+            <div class="col-md-3" style="text-align: right;padding-right: 4em">
+                <h3 (click)="changeTab('DASHBOARD')" >TekSystem'ngo'</h3>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>
+<div class="container-fluid">
+    <div class="row" style="height: 80vh!important">
+        <div class="col-md-4" *ngIf="($userType| async)=='ngo'">
+            <app-alert></app-alert>
+        </div>
+        <div class="col">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                            <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
