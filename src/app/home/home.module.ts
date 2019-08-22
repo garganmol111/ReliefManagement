@@ -18,16 +18,19 @@ import { TrackProcessComponent } from './core/track-process/track-process.compon
 import { GeneralRequestComponent } from './core/general-request/general-request.component';
 import { MainComponent } from './core/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MapboxComponent } from './core/map/mapbox/mapbox.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { ChartsModule } from 'ng2-charts';
 import { MatSelectModule } from '@angular/material/select';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { CaterComponent } from './ui-element/cater/cater.component';
+import { SendComponent } from './core/map/send/send.component';
+
 
 @NgModule({
-	declarations: [
+
+  declarations: [
 		HomeComponent,
 		AlertComponent,
 		AddProductComponent,
@@ -37,6 +40,8 @@ import { CaterComponent } from './ui-element/cater/cater.component';
 		GeneralRequestComponent,
 		MainComponent,
 		CaterComponent
+		MapboxComponent,
+		SendComponent
 	],
 	imports: [
 		CommonModule,

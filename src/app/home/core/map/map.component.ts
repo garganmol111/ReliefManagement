@@ -6,6 +6,7 @@ declare var L: any;
 	templateUrl: './map.component.html',
 	styleUrls: [ './map.component.css' ]
 })
+
 export class MapComponent implements OnInit {
 	constructor() {}
 
