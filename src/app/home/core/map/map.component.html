@@ -1,1 +1,9 @@
-<p>map works!</p>
+<ul>
+    <li (click)="change('Map')">Map</li>
+    <li (click)="change('Sum')">Summary</li>
+    <li (click)="change('Send')">Send</li>
+
+    <div *ngIf="v=='Map'"><app-mapbox></app-mapbox></div>
+    <div *ngIf="v=='Sum'">Sum</div>
+    <div *ngIf="v=='Send'">Send</div>
+</ul>

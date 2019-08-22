@@ -17,7 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SummaryComponent } from './disaster/summary/summary.component';
-
+import { ToastrModule } from 'ngx-toastr';
 // const firebaseConfig = {
 //   apiKey: 'AIzaSyAEOwKnM9tqAIZT7rGO2zBomXifTHBYziE',
 //   authDomain: 'teksystem-hackathon.firebaseapp.com',
@@ -29,27 +29,23 @@ import { SummaryComponent } from './disaster/summary/summary.component';
 // };
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    SummaryComponent
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSnackBarModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [ AppComponent, LoginComponent, SummaryComponent ],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+		MatInputModule,
+		MatButtonModule,
+		MatIconModule,
+		AngularFireModule.initializeApp(environment.firebaseConfig),
+		AngularFireAuthModule,
+		FormsModule,
+		ReactiveFormsModule,
+		MatSnackBarModule,
+		ToastrModule.forRoot()
+	],
+	providers: [],
+	bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}

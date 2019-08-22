@@ -14,14 +14,14 @@ export class MapboxService {
   }
 
 
-  getMarkers(): any {
-    return this.db.list('/markers')
-  }
+  // getMarkers(): any {
+  //   return this.db.list('/markers')
+  // }
 
-  createMarker(data: GeoJson) {
-    return this.db.list('/markers')
-                  .push(data)
-  }
+  // createMarker(data: GeoJson) {
+  //   return this.db.list('/markers')
+  //                 .push(data)
+  // }
 
   removeMarker($key: string) {
     return this.db.object('/markers/' + $key).remove()

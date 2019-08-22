@@ -4,15 +4,16 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
-    apiKey: 'AIzaSyCiqjeOhc69oE1g6EYJOky5HgIJzFd8lgA',
-    authDomain: 'elicit-6896d.firebaseapp.com',
-    databaseURL: 'https://elicit-6896d.firebaseio.com',
-    projectId: 'elicit-6896d',
-    storageBucket: 'elicit-6896d.appspot.com',
-    messagingSenderId: '968630590222',
-    appId: '1:968630590222:web:67ff44b64bb5e3b4'
-  },
+  firebaseConfig: {
+		apiKey: 'AIzaSyAEOwKnM9tqAIZT7rGO2zBomXifTHBYziE',
+		authDomain: 'teksystem-hackathon.firebaseapp.com',
+		databaseURL: 'https://teksystem-hackathon.firebaseio.com',
+
+		projectId: 'teksystem-hackathon',
+		storageBucket: '',
+		messagingSenderId: '1030562055942',
+		appId: '1:1030562055942:web:dbb73b1c20d3453b'
+	},
   mapbox: {
     accesssToken: 'pk.eyJ1IjoiYXl1c2gtbWFoYWphbiIsImEiOiJjanptcmt4cTIwNnY5M25ueTN2NHZsNHdlIn0.pmHv4q5SGzgsIZMBJ_N_5A'
   }

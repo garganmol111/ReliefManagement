@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MaterialForm } from 'src/app/interface/material-form.interace';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-add-product',
@@ -13,11 +14,16 @@ export class AddProductComponent implements OnInit {
     quantity: 0
   };
 
+  userid:string;
+
   formMaterial: MaterialForm = { ...this.defaultMaterials};
 
-  constructor() { }
+  constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
   }
 
+  // add(type, quantity){
+  //   this.userid  = this.afAuth
+  // }
 }
