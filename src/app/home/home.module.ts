@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { ChartsModule } from 'ng2-charts';
 import { MatSelectModule } from '@angular/material/select';
+import { SendComponent } from './core/map/send/send.component';
 
 @NgModule({
 
@@ -36,7 +37,8 @@ import { MatSelectModule } from '@angular/material/select';
 		TrackProcessComponent,
 		GeneralRequestComponent,
 		MainComponent,
-		MapboxComponent
+		MapboxComponent,
+		SendComponent
 	],
 	imports: [
 		CommonModule,
