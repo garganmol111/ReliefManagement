@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 export class AlertComponent implements OnInit {
 	constructor(private afAuth: AngularFireAuth, private _db: AngularFireDatabase, private _router: Router) {}
 	alerts: { 'id': string; 'location': string }[] = [];
-
+	$userType;
 	ngOnInit() {
+		this.$userType = this._db.object(`users/${this.afAuth.auth.currentUser.uid}`).valueChanges();
 		this._db.object('alert').valueChanges().subscribe((res) => {
 			var lat = this._db.list('POC').valueChanges().subscribe((res) => {
 				this.alerts = [];
