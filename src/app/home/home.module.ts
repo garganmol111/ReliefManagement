@@ -23,6 +23,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { ChartsModule } from 'ng2-charts';
 import { MatSelectModule } from '@angular/material/select';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { CaterComponent } from './ui-element/cater/cater.component';
 
 @NgModule({
 	declarations: [
@@ -33,7 +35,8 @@ import { MatSelectModule } from '@angular/material/select';
 		InventoryComponent,
 		TrackProcessComponent,
 		GeneralRequestComponent,
-		MainComponent
+		MainComponent,
+		CaterComponent
 	],
 	imports: [
 		CommonModule,
@@ -49,7 +52,9 @@ import { MatSelectModule } from '@angular/material/select';
 		MatInputModule,
 		MatTableModule,
 		ChartsModule,
-		MatSelectModule
-	]
+		MatSelectModule,
+		MatBottomSheetModule
+	],
+	entryComponents: [ CaterComponent ]
 })
 export class HomeModule {}
