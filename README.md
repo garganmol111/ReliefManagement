@@ -1,2 +1,2 @@
-##TEKSYSTEMS
-#DAPP for p2p relief fund
+TEKSYSTEMS
+DAPP for p2p relief fund
