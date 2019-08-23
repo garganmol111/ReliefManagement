@@ -25,10 +25,10 @@ Our project submission for TEKsystems hackathon
 [Ayush Mahajan](https://www.linkedin.com/in/ayushm0108/)  [Anmol Garg](https://www.linkedin.com/in/ag-anmol/)  [Shashvat Mohane](https://www.linkedin.com/in/shashvatmohane/)  [Naman Pareek](https://www.linkedin.com/in/naman-pareek-191b51133/)  [Abhinav Bharadwaj](https://www.linkedin.com/in/abhinav-bharadwaj-4b52b6174/)
 
 # How to use
-> git clone https://github.com/garganmol111/TEKSystems-Team1.git
-> cd TEKSystems-Team1
-> npm install
-> ng serve -o
-> cd Dapps
-> npm install
-> npm run serve
+* > git clone https://github.com/garganmol111/TEKSystems-Team1.git
+* > cd TEKSystems-Team1
+* > npm install
+* > ng serve -o
+* > cd Dapps
+* > npm install
+* > npm run serve
