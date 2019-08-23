@@ -1,6 +1,6 @@
 # TEKsystem Hiring Hackathon
 
-Our project submission for dell hackathon
+Our project submission for TEKsystem hackathon
 
 # Problem Statement :fire: :fire: :fire:
 **Disaster Relief Management System**
@@ -13,6 +13,9 @@ Our project submission for dell hackathon
 
 # Proposed Solution
 >   We propose a web based application, where NGOs can connect with the PoC(Person of Contact) and reach out to the places with most impact. The PoCs  can also broadcast a request for help.
+
+# Presentation 
+>   https://docs.google.com/presentation/d/1Vd5Kqfuuiln6deFqL9r0rahbhQShrJig9m1HY60LBQg/edit?usp=sharing
 
 # Branch Descriptions
 *  **Master** : Final Branch with all the final changes
