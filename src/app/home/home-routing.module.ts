@@ -18,7 +18,7 @@ const routes: Routes = [{
     { path: 'inventory', component: InventoryComponent },
     { path: 'request', component: GeneralRequestComponent },
     { path: 'track', component: TrackProcessComponent },
-    { path: '', component: MainComponent }
+    { path: '', component: TrackProcessComponent }
   ]
 },];
 
