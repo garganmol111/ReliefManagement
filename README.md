@@ -12,4 +12,4 @@ Our project submission for dell hackathon
 *  **< name >** : Individual Branches
 
 # Team Members
-[Ayush Mahajan]() [Anmol Garg]() [Shashvat Mohane]() [Naman Pareek]() [Abhinav Bharadwaj]()
+[Ayush Mahajan](https://www.linkedin.com/in/ayushm0108/)  [Anmol Garg](https://www.linkedin.com/in/ag-anmol/)  [Shashvat Mohane](https://www.linkedin.com/in/shashvatmohane/)  [Naman Pareek](https://www.linkedin.com/in/naman-pareek-191b51133/)  [Abhinav Bharadwaj](https://www.linkedin.com/in/abhinav-bharadwaj-4b52b6174/)
