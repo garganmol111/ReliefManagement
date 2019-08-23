@@ -13,9 +13,13 @@ export class CaterComponent implements OnInit {
 	items;
 
 	constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data: any, private fbDb: AngularFireDatabase) {
+		this.reloadValue();
+	}
+
+	reloadValue() {
 		this.items = this.fbDb.list('items').valueChanges();
-		console.log(data);
-		this.fbDb.object(`alert/${data.id}`).valueChanges().subscribe((res) => {
+		console.log(this.data);
+		this.fbDb.object(`alert/${this.data.id}`).valueChanges().subscribe((res) => {
 			this.dataSource = [ ...res['description'] ];
 		});
 	}
@@ -27,7 +31,7 @@ export class CaterComponent implements OnInit {
 			for (let i: number = 0; i < res.length; i++) {
 				if (res[i]['item'] == this.currentItem.item) {
 					let temp = res[i];
-					temp['transit'] = this.currentItem.quantity;
+					temp['transit'] += this.currentItem.quantity;
 					this.fbDb.object(`alert/${this.data.id}/description/${i}`).update(temp);
 				}
 			}
