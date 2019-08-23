@@ -19,16 +19,18 @@ import { GeneralRequestComponent } from './core/general-request/general-request.
 import { MainComponent } from './core/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapboxComponent } from './core/map/mapbox/mapbox.component';
-
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { ChartsModule } from 'ng2-charts';
 import { MatSelectModule } from '@angular/material/select';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { CaterComponent } from './ui-element/cater/cater.component';
 import { SendComponent } from './core/map/send/send.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ViewTransitComponent } from './ui-element/view-transit/view-transit.component';
 
 @NgModule({
-
-  declarations: [
+	declarations: [
 		HomeComponent,
 		AlertComponent,
 		AddProductComponent,
@@ -37,8 +39,10 @@ import { SendComponent } from './core/map/send/send.component';
 		TrackProcessComponent,
 		GeneralRequestComponent,
 		MainComponent,
+		CaterComponent,
 		MapboxComponent,
-		SendComponent
+		SendComponent,
+		ViewTransitComponent
 	],
 	imports: [
 		CommonModule,
@@ -54,7 +58,10 @@ import { SendComponent } from './core/map/send/send.component';
 		MatInputModule,
 		MatTableModule,
 		ChartsModule,
-		MatSelectModule
-	]
+		MatSelectModule,
+		MatBottomSheetModule,
+		HttpClientModule
+	],
+	entryComponents: [ CaterComponent, ViewTransitComponent ]
 })
 export class HomeModule {}
