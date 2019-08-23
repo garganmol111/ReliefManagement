@@ -1,10 +1,10 @@
-# TEKsystem Hiring Hackathon
+# TEKsystems Hiring Hackathon
 
-Our project submission for TEKsystem hackathon
+Our project submission for TEKsystems hackathon
 
 # Problem Statement :fire: :fire: :fire:
 **Disaster Relief Management System**
->  The project is an Angular app for TEKsystem hiring challenge, where we try to solve the problems commonly faced during disaster management like double spending and stuff. 
+>  The project is an Angular app for TEKsystems hiring challenge, where we try to solve the problems commonly faced during disaster management like double spending and stuff. 
 >  Using Angular for front-end and business logic and Firebase for database
 
 # Pain Point 
