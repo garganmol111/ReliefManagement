@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
 		this.$userType = this._db.object(`users/${this.afAuth.auth.currentUser.uid}`).valueChanges();
 		this.$userType.subscribe((res) => {
 			this.isNgo = res == 'ngo';
+
+			if(this.isNgo === true){
+				this.router.navigateByUrl('map');
+			}
 		});
 	}
 
