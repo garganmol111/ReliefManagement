@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Dell": {
+    "MUJHacks": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Dell",
+            "outputPath": "dist/MUJHacks",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Dell:build"
+            "browserTarget": "MUJHacks:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Dell:build:production"
+              "browserTarget": "MUJHacks:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Dell:build"
+            "browserTarget": "MUJHacks:build"
           }
         },
         "test": {
@@ -121,16 +121,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Dell:serve"
+            "devServerTarget": "MUJHacks:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Dell:serve:production"
+              "devServerTarget": "MUJHacks:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Dell"
+  "defaultProject": "MUJHacks"
 }

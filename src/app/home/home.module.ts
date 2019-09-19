@@ -28,6 +28,7 @@ import { CaterComponent } from './ui-element/cater/cater.component';
 import { SendComponent } from './core/map/send/send.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewTransitComponent } from './ui-element/view-transit/view-transit.component';
+import { NgoContactComponent } from './core/ngo-contact/ngo-contact.component';
 
 @NgModule({
 	declarations: [
@@ -42,7 +43,8 @@ import { ViewTransitComponent } from './ui-element/view-transit/view-transit.com
 		CaterComponent,
 		MapboxComponent,
 		SendComponent,
-		ViewTransitComponent
+		ViewTransitComponent,
+		NgoContactComponent
 	],
 	imports: [
 		CommonModule,
