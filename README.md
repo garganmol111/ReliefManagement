@@ -12,7 +12,7 @@
 
 # How to use
 * > git clone https://github.com/garganmol111/ReliefManagement.git
-* > cd MUJHackss-Team1
+* > cd ReliefManagement
 * > npm install
 * > ng serve -o
 * > cd Dapps
