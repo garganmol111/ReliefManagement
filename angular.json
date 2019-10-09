@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MUJHacks": {
+    "TEKSystem": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/MUJHacks",
+            "outputPath": "dist/TEKSystem",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MUJHacks:build"
+            "browserTarget": "TEKSystem:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MUJHacks:build:production"
+              "browserTarget": "TEKSystem:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MUJHacks:build"
+            "browserTarget": "TEKSystem:build"
           }
         },
         "test": {
@@ -121,16 +121,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "MUJHacks:serve"
+            "devServerTarget": "TEKSystem:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MUJHacks:serve:production"
+              "devServerTarget": "TEKSystem:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "MUJHacks"
+  "defaultProject": "TEKSystem"
 }
